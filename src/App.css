@@ -1,0 +1,16 @@
+:root {
+  --primary-color: #48B379;
+  --lighter-green-color: #F2FFF3;
+  --red-color: #FF3F3F;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; */
+}
+
+main {
+  /* background-color: #F7F7F7; */
+}

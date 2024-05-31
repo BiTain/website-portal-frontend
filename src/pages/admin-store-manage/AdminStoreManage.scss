@@ -1,0 +1,112 @@
+@mixin borderTable {
+  border: 2px solid var(--primary-color);
+  border-collapse: collapse;
+}
+
+@mixin icon {
+  font-size: 25px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.admin-store-manage {
+  position: relative;
+  margin-top: 50px;
+  width: calc(100% - 250px);
+  padding: 0 20px;
+  min-width: calc(1200px - 250px);
+  display: inline-block;
+
+  .search-filter {
+    display: flex;
+    justify-content: space-between;
+
+    .search {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      width: 100%;
+
+      .search-input {
+        height: 40px;
+        width: 100%;
+        padding: 0 10px;
+        border: 1px solid #ccc;
+        outline: none;
+      }
+
+      .search-icon {
+        font-size: 20px;
+        position: absolute;
+        right: 10px;
+      }
+    }
+  }
+
+  .ant-table-thead .ant-table-cell {
+    background-color: var(--primary-color);
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .table {
+    width: 100%;
+    margin-top: 20px;
+    @include borderTable();
+
+    .header-row {
+      height: 50px;
+      background-color: var(--primary-color);
+      color: #fff;
+      @include borderTable();
+
+      th {
+        @include borderTable();
+      }
+    }
+
+    .data-row {
+      @include borderTable();
+      height: 50px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--lighter-green-color)
+      }
+
+      .store-id {
+        @include borderTable();
+        text-align: center;
+      }
+
+      .store-name {
+        @include borderTable();
+        padding-left: 10px
+      }
+
+      .seller-id {
+        @include borderTable();
+        text-align: center;
+      }
+
+      .date-regis {
+        @include borderTable();
+        text-align: center;
+      }
+
+      .action {
+        @include borderTable();
+        text-align: center;
+
+        .edit-icon {
+          @include icon();
+        }
+
+        .lock-icon {
+          @include icon();
+        }
+      }
+    }
+  }
+}

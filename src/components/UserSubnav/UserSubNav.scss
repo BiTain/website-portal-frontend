@@ -1,0 +1,93 @@
+@mixin iconStyle {
+    color: #515153;
+    font-size: 25px;
+    background-color: #E7E7E7;
+    padding: 5px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-subnav.open {
+    display: block;
+}
+
+.user-subnav {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    list-style: none;
+    background-color: #fff;
+    width: 200px;
+    padding: 10px 0 0 0;
+    z-index: 10;
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.1);
+
+    &::before {
+        content: "";
+        border: 10px solid;
+        border-color: transparent transparent #fff transparent;
+        position: absolute;
+        top: -19px;
+        right: 10px;
+    }
+
+    .user-name {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    li {
+        &:hover {
+            background-color: #eee;
+        }
+
+        &:hover:first-child {
+            background-color: #fff;
+        }
+
+        &:first-child {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+
+            .user-name {
+                margin-left: 5px;
+            }
+        }
+
+        a {
+            display: flex !important;
+            align-items: center !important;
+            color: black !important;
+            text-decoration: none !important;
+            padding: 8px 0 8px 10px !important;
+            font-weight: normal !important;
+
+            .user-icon {
+                @include iconStyle();
+            }
+
+            .setting-icon {
+                @include iconStyle();
+            }
+
+            .support-icon {
+                @include iconStyle();
+            }
+
+            .log-out-icon {
+                @include iconStyle();
+                color: red;
+            }
+        }
+
+        &:last-child {
+            a {
+                color: red !important;
+            }
+        }
+    }
+}

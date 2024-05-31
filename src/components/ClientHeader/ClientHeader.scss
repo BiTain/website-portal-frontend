@@ -1,0 +1,207 @@
+@mixin anchorNavigation {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 12px;
+}
+
+@keyframes categoriesAnimation {
+  0% {
+    opacity: 0;
+    top: 0px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 43px;
+  }
+}
+
+.wrapper-client-header {
+  background-color: var(--primary-color);
+
+  .client-header {
+    width: 1200px;
+    padding: 0 30px;
+    list-style: none;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-item {
+      display: inline-block;
+      height: 60px;
+
+      .logo-link {
+        .logo {
+          height: 100%;
+          cursor: pointer;
+          display: inline-block;
+        }
+      }
+    }
+
+    .sub-header {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+
+      a {
+        @include anchorNavigation();
+      }
+
+      .categories.active,
+      a.active {
+        border-bottom: 3px solid #fff;
+      }
+
+      .categories {
+        @include anchorNavigation();
+        cursor: pointer;
+        position: relative;
+        margin-bottom: -12px;
+
+
+        &:hover {
+          .categories-list {
+            animation: categoriesAnimation 0.3s both;
+          }
+        }
+
+        &::after {
+          content: '';
+          width: 100%;
+          height: 40px;
+          position: absolute;
+          bottom: -30px;
+          left: 0;
+        }
+
+        .down-icon {
+          position: absolute;
+          top: 5px;
+        }
+
+        .categories-list {
+          position: absolute;
+          z-index: 1;
+          background-color: #fff;
+          list-style-type: none;
+          width: 150%;
+          padding: 20px;
+          top: -600px;
+          box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.1);
+
+          .super-categories {
+            margin-bottom: 10px;
+            display: block;
+
+            a {
+              color: #000;
+              font-weight: 500;
+              display: inline-block;
+              margin-bottom: 5px;
+              transition: 0.3s;
+
+              &:hover {
+                color: var(--primary-color);
+              }
+            }
+
+            .sub-categories {
+              a {
+                color: #000;
+                font-weight: 400;
+                margin-bottom: 0;
+                transition: 0.3s;
+
+                &:hover {
+                  color: var(--primary-color);
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .search {
+      position: relative;
+      margin-right: 10px;
+
+      input {
+        border: none;
+        width: 100%;
+        height: 40px;
+        padding-left: 10px;
+        outline: none;
+      }
+
+      .search-icon {
+        color: #aaa;
+        font-size: 25px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        border-left: 1px solid #ccc;
+        padding-left: 5px;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+
+      .ant-input-group-wrapper {
+        width: 100%;
+      }
+
+      .ant-input-group-addon {
+        inset-inline-start: 0px;
+      }
+
+      .ant-input-search-button {
+        height: 40px !important;
+        border: none !important;
+      }
+    }
+
+    .auth {
+      position: relative;
+
+      .log-icon {
+        color: #fff;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -25px;
+      }
+
+      a {
+        @include anchorNavigation();
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .user-avatar {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

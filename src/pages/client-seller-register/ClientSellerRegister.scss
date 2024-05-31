@@ -1,0 +1,141 @@
+@mixin labelStyle {
+    display: block;
+    margin-bottom: 5px;
+}
+@mixin inputStyle {
+    display: block;
+    height: 35px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    outline: none;
+    border-radius: 5px;
+    &:focus {
+        border: 2px solid var(--primary-color);
+    }
+}
+
+.ant-form-item {
+    margin-bottom: 12px !important;
+}
+
+.ant-form-item-label {
+    padding: 0 !important;
+}
+.wrapper-client-seller-register {
+    .seller-avatar {
+        .ant-form-item-label {
+            text-align: center;
+        }
+
+        .ant-upload-list-item-container {
+            max-height: 270px;
+            height: 100% !important;
+        }
+
+        .ant-upload-list.ant-upload-list-picture-card {
+            text-align: center;
+        }
+
+        .ant-upload-list-item-container {
+            width: 100% !important;
+        }
+    }
+
+    display: flex;
+    .client-seller-register {
+        width: 1200px;
+        margin: 30px auto;
+        padding: 0 30px;
+        .title {
+            background-color: var(--primary-color);
+            color: #fff;
+            display: block;
+            text-transform: uppercase;
+            padding: 8px 0;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+        .register-info {
+            border: 3px solid var(--primary-color);
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            .avatar {
+                //width: 25%;
+                width: 100%;
+                object-fit: contain;
+                border: 1px solid var(--primary-color);
+                display: inline-block;
+                // margin-right: 20px;
+            }
+            .register-info-content {
+                display: inline-block;
+                width: 70%;
+                .fullname-label {
+                    @include labelStyle();
+                }
+                #fullname {
+                    @include inputStyle();
+                    width: 100%;
+                }
+                .email-label {
+                    @include labelStyle();
+                    display: inline-block;
+                    width: 48%;
+                    margin-right: 30px;
+                }
+                #email {
+                    @include inputStyle();
+                    display: inline-block;
+                    width: 48%;
+                    margin-right: 30px;
+                }
+                .phone-number-label {
+                    @include labelStyle();
+                    display: inline-block;
+                    width: 48%;
+                }
+                #phone-number {
+                    @include inputStyle();
+                    display: inline-block;
+                    width: 48%;
+                }
+                .store-name-label {
+                    @include labelStyle();
+                }
+                #store-name {
+                    @include inputStyle();
+                }
+                .store-link-label {
+                    @include labelStyle();
+                }
+                #store-link {
+                    @include inputStyle();
+                }
+            }
+        }
+        .register-button {
+            background-color: var(--primary-color);
+            //padding: 10px 20px;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            right: -100%;
+            transform: translate(-100%);
+            margin-top: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}

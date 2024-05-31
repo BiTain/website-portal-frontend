@@ -1,0 +1,110 @@
+@mixin icon {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+@mixin content {
+    color: #fff;
+    font-size: 16px;
+}
+
+@mixin wrapperContent {
+    display: flex;
+    align-items: center;
+    margin: 10px 15px;
+    padding: 0 10px;
+    height: 50px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.admin-sidebar {
+    background-color: #264147;
+    width: 250px;
+    height: calc(100vh - 60px);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+    vertical-align: top;
+
+    .manage {
+        .manage-user {
+            @include wrapperContent();
+
+            //background-color: var(--primary-color);
+            .user-icon {
+                @include icon();
+            }
+
+            .manage-user-content {
+                @include content();
+            }
+        }
+
+        .manage-user.active {
+            background-color: #fff;
+
+            .user-icon {
+                color: #264147;
+            }
+
+            .manage-user-content {
+                color: #264147;
+            }
+        }
+
+        .manage-store {
+            @include wrapperContent();
+
+            .store-icon {
+                @include icon();
+            }
+
+            .manage-store-content {
+                @include content();
+            }
+        }
+
+        .manage-store.active {
+            background-color: #fff;
+
+            .store-icon {
+                color: #264147;
+            }
+
+            .manage-store-content {
+                color: #264147;
+            }
+        }
+    }
+
+    .functional {
+        .setting {
+            @include wrapperContent();
+
+            .setting-icon {
+                @include icon();
+            }
+
+            .setting-content {
+                @include content();
+            }
+        }
+
+        .logout {
+            @include wrapperContent();
+
+            .logout-icon {
+                @include icon();
+                color: red
+            }
+
+            .logout-content {
+                @include content();
+                color: red;
+            }
+        }
+    }
+}

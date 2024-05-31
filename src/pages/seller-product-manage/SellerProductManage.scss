@@ -1,0 +1,149 @@
+@mixin borderTable {                    
+    border: 2px solid var(--primary-color);
+    border-collapse: collapse;
+}
+@mixin icon {
+    font-size: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.wrapper-seller-product-manage {
+    .seller-product-manage {
+        padding: 30px 30px;
+        min-width: 1200px;
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            .search-filter {
+                display: flex;
+                justify-content: space-between;
+                width: 60%;
+                .search {
+                    display: inline-flex;
+                    align-items: center;
+                    position: relative;
+                    width: 65%;
+                    .search-input {
+                        height: 40px;
+                        width: 100%;
+                        padding: 0 10px;
+                        border: 1px solid #ccc;
+                        outline: none;
+                    }
+                    .search-icon {
+                        font-size: 20px;
+                        position: absolute;
+                        right: 10px;
+                    }
+                }
+        
+                #role {
+                    width: 30%;
+                    padding: 0 10px;
+                    border: 1px solid #ccc;
+                    outline: none;
+                    appearance: none;
+                    background-image: url('../../assets/img/drop-down-icon.png');
+                    background-repeat: no-repeat;
+                    background-position: right 10px top 50%;
+                    background-size: 15px 15px;
+                    cursor: pointer;
+                    .role-item {
+                        appearance: none;
+                    }
+                }                   
+            }
+            .add-product {
+                background-color: #fff;
+                padding: 0 20px;
+                border: 1px solid var(--primary-color);
+                color: var(--primary-color);
+                font-size: 14px;
+                transition: 0.3s;
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+                text-decoration: none;
+                cursor: pointer;
+                &:hover {
+                    background-color: var(--primary-color);
+                    color: #fff;
+                    .plus-icon {
+                        color: #fff;
+                    }
+                }
+                .plus-icon {
+                    color: var(--primary-color);
+                    margin-left: 10px;
+                    font-size: 18px;
+                    transition: 0.3s;
+                }
+            }
+        }
+        .ant-table-thead .ant-table-cell {
+            background-color: var(--primary-color);
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .table {
+            @include borderTable();
+            width: 100%;
+            margin-top: 20px;
+            .table-header {
+                @include borderTable();
+                height: 50px;
+                background-color: var(--primary-color);
+                .header-row {
+                    th {
+                        @include borderTable();
+                        color: #fff
+                    }   
+                }
+            }
+            .table-body {
+                .data-row {
+                    @include borderTable();
+                    text-align: center;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: var(--lighter-green-color);
+                    }
+                    .prod-img {
+                        width: 10%;
+                        @include borderTable();
+                        img {
+                            width: 60px;
+                            padding: 8px 0
+                        }
+                    }
+                    .prod-name {
+                        @include borderTable();
+                        text-align: left;
+                        padding-left: 10px
+                    }
+                    .post-date {
+                        @include borderTable();
+                        width: 15%;
+                    }
+                    .category {
+                        @include borderTable();
+                        text-align: left;
+                        padding-left: 10px;
+                        width: 18%;
+                    }
+                    .action {
+                        width: 10%;
+                        @include borderTable();
+                        .edit-icon {
+                            @include icon();
+                        }
+                        .delete-icon {
+                            @include icon();
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

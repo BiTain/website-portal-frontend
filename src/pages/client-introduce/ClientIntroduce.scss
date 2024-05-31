@@ -1,0 +1,21 @@
+.wrapper-client-introduce {
+    display: flex;
+    .client-introduce {
+        width: 1200px;
+        padding: 30px;
+        margin: auto;
+        .title {
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .content {
+            ul {
+                list-style-type: square;
+                margin-left: 35px;
+                li {
+
+                }
+            }
+        }
+    }
+}

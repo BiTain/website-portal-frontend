@@ -1,0 +1,175 @@
+@mixin inputStyle {
+    padding-left: 50px;
+    height: 45px;
+    width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    &:focus {
+        border: 3px solid var(--primary-color);
+    }
+}
+@mixin iconStyle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    z-index: 99;
+    font-size: 30px;
+    color: var(--primary-color);
+}
+.wrapper-sign-up {
+    background-image: url('../../assets/img/sigin-signup-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    .back-to-index {
+        color: #fff;
+        font-size: 18px;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .sign-up {
+        padding: 50px;
+        width: 500px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+        background-color: #fff;
+        .title {
+            display: block;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 500;
+            color: #393939;
+            margin-bottom: 20px
+        }
+        .sign-up-form {            
+            .wrapper-username {
+                position: relative;
+                margin-bottom: 10px;
+                .username-icon {
+                    @include iconStyle();
+                }
+                .username-input {
+                    @include inputStyle();
+                }
+            }
+            .wrapper-password {
+                position: relative;
+                margin-bottom: 10px;
+                .password-icon {
+                    @include iconStyle();
+                }
+                .password-input {
+                    @include inputStyle();
+                }
+                .show-password-icon {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 20px;
+                    cursor: pointer;
+                    color: #393939;
+                }
+            }
+            .wrapper-repeat-password {
+                position: relative;
+                .repeat-password-icon {
+                    @include iconStyle();
+                }
+                .repeat-password-input {
+                    @include inputStyle();
+                }
+                .show-repeat-password-icon {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 20px;
+                    cursor: pointer;
+                    color: #393939;
+                }
+            }
+            .info-title {
+                display: block;
+                text-align: center;
+                margin-top: 40px;
+                margin-bottom: 10px;
+                font-size: 18px;
+                color: #393939;
+                font-weight: 500;
+            }
+            .wrapper-fullname {
+                margin-bottom: 10px;
+                position: relative;
+                .fullname-icon {
+                    @include iconStyle();
+                }
+                .fullname-input {
+                    @include inputStyle();
+                }
+            }
+            .wrapper-email {
+                margin-bottom: 10px;
+                position: relative;
+                .email-icon {
+                    @include iconStyle();
+                }
+                .email-input {
+                    @include inputStyle();
+                }
+            }
+            .wrapper-tel {
+                margin-bottom: 10px;
+                position: relative;
+                .tel-icon {
+                    @include iconStyle();
+                }
+                .tel-input {
+                    @include inputStyle();
+                }
+            }
+            .signup-button {
+                width: 100%;
+                height: 45px;
+                margin-top: 5px;
+                background-color: var(--primary-color);
+                color: #fff;
+                border: none;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+        .signin-content {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            .signin-link {
+                color: var(--primary-color);
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

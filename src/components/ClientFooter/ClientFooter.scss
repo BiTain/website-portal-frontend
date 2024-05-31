@@ -1,0 +1,115 @@
+@mixin infoIcon {    
+    color: #fff;
+    background-color: var(--primary-color);
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 50%;
+}
+@mixin infoContent {
+    margin-left: 8px;
+}
+@mixin contactMethod {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+@mixin footerTitle {
+    font-weight: 600;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 20px;
+}
+@mixin socialIcon {
+    color: #fff;
+    background-color: var(--primary-color);
+    padding: 5px;
+    font-size: 35px;
+    border-radius: 50%;
+}
+
+.wrapper-client-footer {
+    background-color: var(--lighter-green-color);
+    .client-footer {    
+        font-size: 16px;
+        width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+        .main-footer {
+            display: flex;
+            justify-content: space-between;            
+            padding: 20px 0;
+            .brand {
+                width: calc(100%/3);
+                .brand-name {
+                    display: block;
+                    font-weight: bold;
+                    font-size: 28px;
+                    text-transform: uppercase;
+                    color: var(--primary-color);
+                }
+            }
+            .info {
+                .info-title {
+                    @include footerTitle();
+                }
+                .address {
+                    @include contactMethod();
+                    .address-icon {
+                        @include infoIcon();
+                    }
+                    .address-content {
+                        @include infoContent();
+                    }
+                }
+                .tel {
+                    @include contactMethod();
+                    .tel-icon {
+                        @include infoIcon();
+                    }
+                    .tel-content {
+                        @include infoContent();
+                    }
+                }
+                .email {
+                    @include contactMethod();
+                    .email-icon {
+                        @include infoIcon();
+                    }
+                    .email-content {
+                        @include infoContent();
+                    }
+                }
+            }
+            .social-network {
+                .social-network-title {
+                    @include footerTitle();
+                }
+                .social-network-icon {
+                    display: flex;
+                    justify-content: space-around;
+                    width: 75%;
+                    margin: auto;
+                    .facebook-icon {
+                        @include socialIcon();
+                    }
+                    .instagram-icon {
+                        @include socialIcon();
+                    }
+                    .twitter-icon {
+                        @include socialIcon();
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        background-color: var(--primary-color);
+        padding: 8px 0;
+        .copyright-content {
+            font-size: 14px;
+            display: block;
+            text-align: center;
+            color: #fff;
+        }
+    }
+}
