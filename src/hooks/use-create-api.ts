@@ -12,8 +12,8 @@ function useCreateApi<I, O>(resourceUrl: string, successMessage?: string) {
             onSuccess: () => notification.success({
                 message: successMessage ? successMessage : 'Tạo thành công'
             }),
-            onError: () => notification.error({
-                message: 'Tạo không thành công có lỗi xảy ra'
+            onError: (error) => notification.error({
+                message: error.message ? error.message : 'Tạo không thành công có lỗi xảy ra'
             }),
         }
     );
